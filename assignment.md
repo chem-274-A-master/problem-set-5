@@ -1,0 +1,79 @@
+<!-- omit in toc -->
+# Problem Set 5
+
+- [Python - Decorators and Context Managers](#python---decorators-and-context-managers)
+  - [Part 1 - Ideal Gas Class](#part-1---ideal-gas-class)
+  - [Part 2 : Decorators and Context Managers - PyTest](#part-2--decorators-and-context-managers---pytest)
+  - [Part 3 - Modeling a Real Gas](#part-3---modeling-a-real-gas)
+  - [Documentation and Discussion](#documentation-and-discussion)
+
+## Python - Decorators and Context Managers
+
+For this homework, you will write a code to describe the behavior of gases.
+
+Ideal gases are commonly used to introduce thermodynamic concepts. Their behavior can be described by the equation
+
+$$
+PV = nRT
+$$
+
+where `P` represents pressure, `V` is the volume, `n` is the number of moles, `R` is the ideal gas constant, and `T` is the temperature.
+
+This equation can be modified to describe the behavior of real gases by adding terms $a$ and $b$ to account for particle volume and interactions. The **van der Waals gas equation** is 
+
+$$
+\left( P + \frac{a n^{2}} {V^{2}} \right) ( V - nb) = nRT
+$$
+
+You will first write a class to describe the behavior of ideal gases, and use Test Driven Development to develop your code. [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) is a development technique where tests are created before the code is developed. 
+
+This homework provides you with a set of tests in `test_ideal.py` which can be run using the [PyTest testing framework](https://docs.pytest.org/en/7.2.x/). To run these tests, navigate to the folder with your files and execute
+
+```
+pytest -v
+```
+
+Your tasks will be to
+
+1. Write a class called `IdealGas` which passes the provided tests.
+2. Modify the provided tests to use context managers and decorators which are part of the `pytest` package.
+3. Write code (implementation method of your choice) to model a real gas.
+
+### Part 1 - Ideal Gas Class
+Write a class called `IdealGas` which fits the following specifications.
+- The class should store the `R` value as a class attribute.
+- The constructor should take arguments `volume`, `temperature`, and `n_mols` and store these as instance attributes.
+- A volume of zero or less should result in a custom error. This should occur if a volume of 0 is passed to the constructor or if someone tries to set the volume to zero.
+- `pressure` should be a `property` which is calculated from the current state of the object.
+Attempting to change the value of `pressure` should result in a custom error with a message that says, "You cannot set the pressure of the gas."
+- Write a method so that two ideal gases can be added together. When two gasses are added, the resulting gas should have
+`n_mols = n_mols1 + nmols2`, `v= v1 + v2`, and a temperature that is an average that is weighted by the number of moles of each gas.
+- Write an alternate constructor called `from_pressure` which takes in `n_mols`, `temperature`, and `pressure` and returns an ideal gas object. You must also write tests for this method.
+
+### Part 2 : Decorators and Context Managers - PyTest
+The provided tests are written as individual tests. You should refactor the tests to use the [pytest parametrize](https://docs.pytest.org/en/6.2.x/parametrize.html). You will also identify a context manager used in the provided tests that is part of pytest which will allow you to test for expected exceptions.
+
+### Part 3 - Modeling a Real Gas
+Write code to account for the behavior of real gases. The code for this should be very similar, except that you will need `a` and `b` parameters for the model.
+
+You will also need to account for different mixing behavior of van der Waals gases. For your addition function, assume constant volume (i.e. `v = v1 + v2`). However, you will need to [calculate `a` and `b` for the mixture](https://kyleniemeyer.github.io/computational-thermo/content/mixtures/mixtures.html#van-der-waals).
+
+$$
+\begin{split}
+a = \left( \sum_{i=1} x_i \, a_i^{1/2} \right)^2 \\
+b =  \sum_{i=1} x_i \, b_i  \;,
+\end{split}
+$$
+
+There are a few ways to approach this. You could simply add `a` and `b` parameters to your ideal gas class and set them equal to 0 for an ideal gas. Another possibility might be to use inheritance to create two different types of classes. This implementation detail is left up to you (but you will have to discuss your choice!)
+
+### Documentation and Discussion
+Include a `README.md` file which describes the project and software usage. 
+You should include a Makefile in the repository which has at least two targets - one to make an environment, and another to run your tests.
+
+Include answerst to the following questions in your README.
+
+1. What is a decorator? Look up the documentation to write an explanation **in your own words** of what the `pytest parametrize` decorator does.
+2. What are the context managers? What context manager is used in these tests, and what is its purpose? How could the same behavor be used without a context manager? Write this in your own words.
+3. How did you choose to implement code for your van der Waals gas? Would your method change if you had to write code for real gases using [other real gas equations](https://en.wikipedia.org/wiki/Real_gas#:~:text=External%20links-,Models%5Bedit%5D,-Isotherms%20of%20real)? Why or why not?
+
