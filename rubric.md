@@ -53,7 +53,7 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
 
 </table>
 
-# Problem Set 5 - Debugging/Profiling Rubric
+# Debugging/Profiling Rubric
 
 This portion of the Problem Set will be graded out of 10 points and is worth 4% of your total grade.
 
