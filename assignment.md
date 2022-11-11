@@ -77,3 +77,29 @@ Include answerst to the following questions in your README.
 2. What are the context managers? What context manager is used in these tests, and what is its purpose? How could the same behavor be used without a context manager? Write this in your own words.
 3. How did you choose to implement code for your van der Waals gas? Would your method change if you had to write code for real gases using [other real gas equations](https://en.wikipedia.org/wiki/Real_gas#:~:text=External%20links-,Models%5Bedit%5D,-Isotherms%20of%20real)? Why or why not?
 
+
+## Debugging a C++ application
+
+The file `crashes.cpp` contains a program that sometimes crashes. Use your
+debugging knowledge to find the issue.
+
+Write up the cause of the issue in the README file.
+Include any output from debuggers or sanitizers that helped you.
+
+
+## Profiling C++ Code
+
+In this repo is a file `mcsim_cpp.cpp` which contains code for the `mcscim`
+package from the bootcamp. Using `gprof`, profile this code and include the
+output in a file in this repo.  Also, include anything you find surprising
+or interesting. Put this information into the README.
+
+Do the above for two optimzation levels - `-O0` and `-O3`. Is there anything
+interesting about one compared to the other?
+
+
+## Profiling Python Code
+
+Similar to the above, but profiling the `mcsim_psl.py` program with python's
+cProfile. There are no optimization levels, so only one profiler run needs
+to be done. Is there anything taking a surprising amount of time?
