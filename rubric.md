@@ -86,8 +86,8 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
         <td>
            Profiling
            <ul>
-             <li>Profiling results of the C++ code</li>
-             <li>Profiling results of the Python code</li>
+             <li>Profiling results/discussion of the C++ code</li>
+             <li>Profiling results/discussion of the Python code</li>
            </ul>
         </td>
         <td>
