@@ -6,6 +6,10 @@
   - [Part 2 : Decorators and Context Managers - PyTest](#part-2--decorators-and-context-managers---pytest)
   - [Part 3 - Modeling a Real Gas](#part-3---modeling-a-real-gas)
   - [Documentation and Discussion](#documentation-and-discussion)
+- [Debugging a C++ application](#debugging-a-c-application)
+- [Profiling C++ Code](#profiling-c-code)
+- [Profiling Python Code](#profiling-python-code)
+- [Documentation and Discussion](#documentation-and-discussion-1)
 
 ## Python - Decorators and Context Managers
 
@@ -91,7 +95,7 @@ Include any output from debuggers or sanitizers that helped you.
 
 In this repo is a file `mcsim_cpp.cpp` which contains code for the `mcscim`
 package from the bootcamp. Using `gprof`, profile this code and include the
-output in a file in this repo.  Also, include anything you find surprising
+output in a file in this repo. Iinclude anything you find surprising
 or interesting. Put this information into the README.
 
 Do the above for two optimzation levels - `-O0` and `-O3`. Is there anything
@@ -102,4 +106,9 @@ interesting about one compared to the other?
 
 Similar to the above, but profiling the `mcsim_psl.py` program with python's
 cProfile. There are no optimization levels, so only one profiler run needs
-to be done. Is there anything taking a surprising amount of time?
+to be done. You can visualize the results using a program called [snakeviz](https://jiffyclub.github.io/snakeviz/). Is there anything taking a surprising amount of time?
+
+## Documentation and Discussion
+
+Add answers to the questions from the sections above in your `README`. Your code should also contain a `Makefile` with targets for profiling the Python and C++ code.
+

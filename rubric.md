@@ -68,6 +68,14 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
     </tr>
     <tr>
         <td>
+        Makefile
+        </td>
+        <td>
+        1 point
+        </td>
+    </tr>
+    <tr>
+        <td>
             Debugging crashes.cpp
             <ul>
               <li>Correct identification of the bug in crashes.cpp</li>
@@ -94,7 +102,7 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
             Points
             <ul>
               <li>3 points</li>
-              <li>3 points</li>
+              <li>2 points</li>
             </ul>
         </td>
     </tr>
