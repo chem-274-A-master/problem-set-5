@@ -71,6 +71,7 @@ def test_volume_error():
     """Test that gas cannot be constructed with zero volume."""
 
     # change the error type
+    # you should create a custom error type
     with pytest.raises(YOURERRORTYPE):
         gas = IdealGas(volume=0, n_mols=1, temperature=273.15)
 
@@ -108,7 +109,11 @@ def test_update_object():
 
 
 def test_add():
-    """Test that ideal gases can be added together with correct results for properties."""
+    """Test that ideal gases can be added together with correct results for properties.
+    
+    When two gasses are added, the resulting gas should have n_mols = n_mols1 + nmols2, v= v1 + v2, 
+    and a temperature that is an average that is weighted by the number of moles of each gas.
+    """
 
     gas1 = IdealGas(10, 3.25, 298.15)
     gas2 = IdealGas(30, 1.25, 273.15)

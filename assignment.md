@@ -31,7 +31,7 @@ $$
 
 You will first write a class to describe the behavior of ideal gases, and use Test Driven Development to develop your code. [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) is a development technique where tests are created before the code is developed. 
 
-This homework provides you with a set of tests in `test_ideal.py` which can be run using the [PyTest testing framework](https://docs.pytest.org/en/7.2.x/). To run these tests, navigate to the folder with your files and execute
+This homework provides you with a set of tests in `test_ideal.py` which can be run using the [PyTest testing framework](https://docs.pytest.org/en/7.3.x/contents.html). To run these tests, navigate to the folder with your files and execute
 
 ```
 pytest -v
@@ -44,18 +44,15 @@ Your tasks will be to
 3. Write code (implementation method of your choice) to model a real gas.
 
 ### Part 1 - Ideal Gas Class
-Write a class called `IdealGas` which fits the following specifications.
-- The class should store the `R` value as a class attribute.
-- The constructor should take arguments `volume`, `temperature`, and `n_mols` and store these as instance attributes.
-- A volume of zero or less should result in a custom error. This should occur if a volume of 0 is passed to the constructor or if someone tries to set the volume to zero.
-- `pressure` should be a `property` which is calculated from the current state of the object.
-Attempting to change the value of `pressure` should result in a custom error with a message that says, "You cannot set the pressure of the gas."
-- Write a method so that two ideal gases can be added together. When two gasses are added, the resulting gas should have
-`n_mols = n_mols1 + nmols2`, `v= v1 + v2`, and a temperature that is an average that is weighted by the number of moles of each gas.
-- Write an alternate constructor called `from_pressure` which takes in `n_mols`, `temperature`, and `pressure` and returns an ideal gas object. You must also write tests for this method.
+Write a class called `IdealGas` which fits specifications from the provided tests. 
+You should also write additional tests to ensure that your code is robust.
+
+**Add an alternate constructor called `from_pressure`. 
+Be sure to also add appropriate tests for your method (there are no tests for this requirement.)
+
 
 ### Part 2 : Decorators and Context Managers - PyTest
-The provided tests are written as individual tests. You should refactor the tests to use the [pytest parametrize](https://docs.pytest.org/en/6.2.x/parametrize.html). You will also identify a context manager used in the provided tests that is part of pytest which will allow you to test for expected exceptions.
+The provided tests are written as individual tests. You should refactor the tests to use the [pytest parametrize](https://docs.pytest.org/en/7.3.x/how-to/parametrize.html). You will also identify a context manager used in the provided tests that is part of pytest which will allow you to test for expected exceptions.
 
 ### Part 3 - Modeling a Real Gas
 Write code to account for the behavior of real gases. The code for this should be very similar, except that you will need `a` and `b` parameters for the model.
@@ -73,13 +70,16 @@ There are a few ways to approach this. You could simply add `a` and `b` paramete
 
 ### Documentation and Discussion
 Include a `README.md` file which describes the project and software usage. 
-You should include a Makefile in the repository which has at least two targets - one to make an environment, and another to run your tests.
+**You should include a Makefile in the repository which has at least two targets - one to make an environment, and another to run your tests.** 
+Note that for your environment, you should use approaches we have learned in this course (`conda`).
 
-Include answerst to the following questions in your README.
+Include answers to the following questions in your README.
 
 1. What is a decorator? Look up the documentation to write an explanation **in your own words** of what the `pytest parametrize` decorator does.
 2. What are the context managers? What context manager is used in these tests, and what is its purpose? How could the same behavor be used without a context manager? Write this in your own words.
-3. How did you choose to implement code for your van der Waals gas? Would your method change if you had to write code for real gases using [other real gas equations](https://en.wikipedia.org/wiki/Real_gas#:~:text=External%20links-,Models%5Bedit%5D,-Isotherms%20of%20real)? Why or why not?
+3. Where did you use `@property` in your class and why? Did you use any other decorators?
+4. What (if any) additional tests did you add to ensure that your implementations were robust?
+5. How did you choose to implement code for your van der Waals gas? Would your method change if you had to write code for real gases using [other real gas equations](https://en.wikipedia.org/wiki/Real_gas#:~:text=External%20links-,Models%5Bedit%5D,-Isotherms%20of%20real)? Why or why not? Can any of your tests be used for both classes (particularly through using decorators)?
 
 
 ## Debugging a C++ application
@@ -111,4 +111,9 @@ to be done. You can visualize the results using a program called [snakeviz](http
 ## Documentation and Discussion
 
 Add answers to the questions from the sections above in your `README`. Your code should also contain a `Makefile` with targets for profiling the Python and C++ code.
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>
 
