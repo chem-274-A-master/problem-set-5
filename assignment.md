@@ -74,26 +74,54 @@ Write up the cause of the issue in the README file.
 Include any output from debuggers or sanitizers that helped you.
 
 
-## Profiling C++ Code
+## C++ - Eigen and Principal Moments of Inertia
 
-In this repo is a file `mcsim_cpp.cpp` which contains code for the `mcscim`
-package from the bootcamp. Using `gprof`, profile this code and include the
-output in a file in this repo. Iinclude anything you find surprising
-or interesting. Put this information into the README.
+In this repo, the `molecule.cpp` file contains some of the Molecule class from the last problem set.
+I have given you a version of the code that calculates the inertia tensor. You have the following two
+tasks - convert the code to use Eigen rather than nested `std::array`, and then to use Eigen to compute
+the principal moments of inertia, from which you will determine the molecular rotor type.
 
-Do the above for two optimzation levels - `-O0` and `-O3`. Is there anything
-interesting about one compared to the other?
+We talked about the [Eigen](https://eigen.tuxfamily.org) library in lecture. I have included a version of the
+library in this repo, so you do not have to install it. Use `-I./include` when compiling the `molecule.cpp` file.
+
+### Converting the code to use Eigen
+
+In the current code, the `inertia_tensor` function returns a 3x3 matrix stored in nested arrays. This is kind of annoying,
+and it should really be stored in a matrix.
+
+Modify the code so that Eigen matrices are used rather than nested arrays.
+
+### Principal Moments of Inertia
+
+The principal moments of inertia are an important quantity which can be used to determine some things about rotational behavior
+of the molecule, as well as for aligning molecules in a standard orientation.
+
+The principal moments of inertia are calculated by diagonalizing the inertia tensor, forming its eigenvectors and
+eigenvalues.
+
+For an example of how to do this in Eigen, see [here](https://eigen.tuxfamily.org/dox/group__enums.html#gga39e3366ff5554d731e7dc8bb642f83cdad5381b2d1c8973a08303c94e7da02333).
+
+Write a class method that returns the eigenvalues from the above diagonalization.
+
+**Note:** The inertia tensor is represented by *symmetric* matrices. The eigenvalues and eigenvectors of a matrix are complex unless the
+matrix is [hermitian (or self-adjoint)](https://en.wikipedia.org/wiki/Hermitian_matrix), in which case they are real. A real,
+symmetric matrix is hermitian/self-adjoint, so we can use the eigensolver from Eigen that handles self-adjoint matrices.
+If you used the regular Eigensolver, you would have to allow for complex eigenvalues and eigenvectors.
 
 
-## Profiling Python Code
+### Molecular Rotor Type
 
-Similar to the above, but profiling the `mcsim_psl.py` program with python's
-cProfile. There are no optimization levels, so only one profiler run needs
-to be done. You can visualize the results using a program called [snakeviz](https://jiffyclub.github.io/snakeviz/). Is there anything taking a surprising amount of time?
+The eigenvalues obtained from the previous step can be used to determine the [molecular rotor type](https://en.wikipedia.org/wiki/Rotational_spectroscopy#Classification_of_molecular_rotors). 
 
-## Documentation and Discussion
+* If all moments are equal (to within some tolerance), then the rotor type is a "spherical top"
+* If one moment is small (close to zero) and the others are equal, the rotor type is "linear"
+* If two moments are equal (but not all three) then the rotor type is is a "symmetric top"
+* If all three moments are different, the rotor type is "asymmetric top"
 
-Add answers to the questions from the sections above in your `README`. Your code should also contain a `Makefile` with targets for profiling the Python and C++ code.
+Write a class method that returns the molecular rotor type (as a string).
+
+
+
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
