@@ -84,6 +84,11 @@ the principal moments of inertia, from which you will determine the molecular ro
 We talked about the [Eigen](https://eigen.tuxfamily.org) library in lecture. I have included a version of the
 library in this repo, so you do not have to install it. Use `-I./include` when compiling the `molecule.cpp` file.
 
+Use the functions you create in this section on the two molecules in the `main` function - one
+representing water, and the other methane.
+
+**Makefile:** Create a makefile that compiles and runs your code
+
 ### Converting the code to use Eigen
 
 In the current code, the `inertia_tensor` function returns a 3x3 matrix stored in nested arrays. This is kind of annoying,
@@ -115,12 +120,11 @@ The eigenvalues obtained from the previous step can be used to determine the [mo
 
 * If all moments are equal (to within some tolerance), then the rotor type is a "spherical top"
 * If one moment is small (close to zero) and the others are equal, the rotor type is "linear"
-* If two moments are equal (but not all three) then the rotor type is is a "symmetric top"
+* If two moments are equal (but different from the third) then the rotor type is is a "symmetric top"
 * If all three moments are different, the rotor type is "asymmetric top"
 
-Write a class method that returns the molecular rotor type (as a string).
-
-
+Write a class method that returns the molecular rotor type (as a string). Use this function on the
+two in the `main` function to determine the molecular rotor types.
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

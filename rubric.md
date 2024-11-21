@@ -53,9 +53,9 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
 
 </table>
 
-# Debugging/Profiling Rubric
+# C++
 
-This portion of the Problem Set will be graded out of 10 points and is worth 4% of your total grade.
+This portion of the Problem Set will be graded out of 20 points and is worth 4% of your total grade.
 
 <table width="100%">
     <tr>
@@ -76,34 +76,35 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
     </tr>
     <tr>
         <td>
-            Debugging crashes.cpp
-            <ul>
-              <li>Correct identification of the bug in crashes.cpp</li>
-              <li>Explanation/description of debugging steps</li>
-            </ul>
+            Correct conversion of function to use Eigen
         </td>
         <td>
-            Points
-            <ul>
-              <li>2 Points</li>
-              <li>2 Points</li>
-            </ul>
+            4 Points
         </td>
     </tr>
     <tr>
         <td>
-           Profiling
-           <ul>
-             <li>Profiling results/discussion of the C++ code</li>
-             <li>Profiling results/discussion of the Python code</li>
-           </ul>
+            Function that computes the principal moments of intertia
         </td>
         <td>
-            Points
-            <ul>
-              <li>3 points</li>
-              <li>2 points</li>
-            </ul>
+            9 Points
         </td>
     </tr>
+    <tr>
+        <td>
+            Function that determines the molecular rotor type
+        </td>
+        <td>
+            3 Points
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Application of functions to provided molecules
+        </td>
+        <td>
+            3 Points
+        </td>
+    </tr>
+    
 </table>
