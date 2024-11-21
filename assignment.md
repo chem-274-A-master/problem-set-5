@@ -1,9 +1,27 @@
 <!-- omit in toc -->
 # Problem Set 5
 
+<div style="background-color: #fff3cd; color: #856404; padding: 15px; margin-bottom: 25px; border: 1px solid #ffeeba; border-radius: 4px;">
+  
+  <strong>Showing your work</strong> 
+  <p>
+    Your homework assignments should show incremental development with at least two different commits over two different days of work. Assignments that do not show incremental development will incur a 5% penalty.
+  </p>
+
+  <strong>AI Acceptable Use</strong>
+  <p>
+"AI" refers to Artificial Intelligence and includes tools like ChatGPT, Claude, GitHub Copilot, and other language models or AI-powered assistants. AI tools may be used to research ideas or clarify concepts. However, they should not be used to generate code or complete assignments. All submitted work must reflect your own understanding and effort.
+</p>
+<p>
+If you use AI in this assignment, include a statement in your README reflection on what AI you used and how you used it.
+
+</div>
+
 ## Python - Object-Oriented Programming, Decorators, and Context Managers
 
-For this homework, you will design a set of Python classes to model the behavior of different types of gases: real gases and ideal gases. **Some of the design parameters for these classes are already defined in the provided testing file (`test_gases.py`).** However, please read the assignment explanation before moving to this file. Using this file will come later in Part 2.
+For this homework, you will design a set of Python classes to model the behavior of different types of gases: real gases and ideal gases. **Some of the design parameters for these classes are already defined in the provided testing file (`test_gases.py`).** However, please read the assignment explanation before moving to this file. 
+
+**Besides pytest, you should only use the Python Standard Library for this assignment.**
 
 Ideal gases are commonly used to introduce thermodynamic concepts, with their behavior described by the equation:
 
@@ -25,7 +43,6 @@ $$
 \left( P + \frac{a n^{2}} {V^{2}} \right) ( V - nb) = nRT
 $$
 
-
 This homework will have three main parts: **Class Design**, **Testing**, and **Documentation and Discussion**. You should first think about class structure (without implementing code), then use the provided tests in (2) to write your code.
 
 
@@ -42,6 +59,12 @@ Test Driven Development to develop your code. [Test Driven Development](https://
 
 Tests for ideal gases are provided in `test_gases.py`. Use the provided tests to guide your implementation of the classes. You should write your `IdealGas` class so that these tests pass. 
 
+Recall that you can run these tests by making sure `pytest` is installed and running the following ommand in your terminal:
+
+```bash
+pytest -v
+```
+
 In addition to using the provided tests, you should also develop your `RealGas` class. You should also write additional tests for your `RealGas` class.
 
 ### Part 3  PyTest Decorators and Context Managers
@@ -57,7 +80,7 @@ As always, you should include overview information about how to install and run 
 
 2. **Shared Properties**: Explain how you handled shared properties like temperature, volume, and moles. Why did you place these attributes in certain classes, and how did that contribute to code clarity and reusability?
 
-3. **Mixing Behavior**: Describe how you approached the implementation of gas mixing parameters. Where did you implement these methods, and how did the equations guide your design decisions?
+3. **Mixing Behavior**: Describe how you approached the implementation of gas mixing parameters. How did you implement these methods?
 
 4. **Decorator Usage**: Where did you use `@property` in your class? Why was it useful for your design? Did you use any other decorators, and how did they simplify or improve your code?
 

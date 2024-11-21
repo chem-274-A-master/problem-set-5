@@ -29,14 +29,6 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
     </tr>
     <tr>
     <td>
-        Makefile
-    </td>
-    <td>
-        1 point
-    </td>
-    </tr>
-    <tr>
-    <td>
         Documentation
     </td>
     <td>
@@ -47,7 +39,7 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
         Discussion Questions
     </td>
     <td>
-        3 points
+        4 points
     </td>
 
 
