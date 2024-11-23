@@ -88,15 +88,6 @@ As always, you should include overview information about how to install and run 
 
 6. **Future Extensibility**: If you needed to model other real gas equations beyond the van der Waals equation, how would your design change, if at all? Was your current approach flexible enough to accommodate this?
 
-## Debugging a C++ application
-
-The file `crashes.cpp` contains a program that sometimes crashes. Use your
-debugging knowledge to find the issue.
-
-Write up the cause of the issue in the README file.
-Include any output from debuggers or sanitizers that helped you.
-
-
 ## C++ - Eigen and Principal Moments of Inertia
 
 In this repo, the `molecule.cpp` file contains some of the Molecule class from the last problem set.
