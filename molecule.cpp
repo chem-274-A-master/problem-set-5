@@ -71,27 +71,35 @@ class Molecule
 
 int main(void)
 {
+    //////////////////////////////////////////////////
     // Constructing with vector & moment of inertia
-    std::cout << "WATER" << std::endl;
-    std::vector<Atom> atoms;
-    atoms.push_back(Atom{8, 15.99491462, 1.0000,  1.0000,  0.2404});
-    atoms.push_back(Atom{1, 1.007825032, 1.0000,  2.4326, -0.9611});
-    atoms.push_back(Atom{1, 1.007825032, 1.0000, -2.4326, -0.9611});
+    //////////////////////////////////////////////////
 
-    Molecule h2o(atoms);
+    /* Construct a water molecule with the following information
+
+        Element  Atomic mass      X       Y       Z
+        O        15.99491462   1.0000   1.0000  0.2404
+        H        1.007825032   1.0000   2.4326 -0.9611
+        H        1.007825032   1.0000  -2.4326 -0.9611
+    */
+
     // Calculate and print inertia tensor
     // Calculate and print principal moments
     // Determine molecular rotor type
 
-    std::cout << "METHANE" << std::endl;
-    atoms.clear();
-    atoms.push_back(Atom{6, 12.011,       0.0000,  0.0000,  0.0000});
-    atoms.push_back(Atom{1, 1.007825032,  0.6291,  0.6291,  0.6291});
-    atoms.push_back(Atom{1, 1.007825032, -0.6291, -0.6291,  0.6291});
-    atoms.push_back(Atom{1, 1.007825032, -0.6291,  0.6291, -0.6291});
-    atoms.push_back(Atom{1, 1.007825032,  0.6291, -0.6291, -0.6291});
 
-    Molecule ch4(atoms);
+    //---------------------------------------------------------------//
+
+    /* Construct a methane molecule with the following information
+
+            Element  Atomic mass          X       Y       Z
+              C        12.011        0.0000   0.0000   0.0000
+              H        1.007825032   0.6291   0.6291   0.6291
+              H        1.007825032  -0.6291  -0.6291   0.6291
+              H        1.007825032  -0.6291   0.6291  -0.6291
+              H        1.007825032   0.6291  -0.6291  -0.6291
+    */
+
     // Calculate and print inertia tensor
     // Calculate and print principal moments
     // Determine molecular rotor type

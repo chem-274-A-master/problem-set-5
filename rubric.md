@@ -47,7 +47,7 @@ This portion of the Problem Set will be graded out of 10 points and is worth 4% 
 
 # C++
 
-This portion of the Problem Set will be graded out of 20 points and is worth 4% of your total grade.
+This portion of the Problem Set will be graded out of 10 points and is worth 4% of your total grade.
 
 <table width="100%">
     <tr>
@@ -71,7 +71,7 @@ This portion of the Problem Set will be graded out of 20 points and is worth 4% 
             Correct conversion of function to use Eigen
         </td>
         <td>
-            4 Points
+            2 Points
         </td>
     </tr>
     <tr>
@@ -79,7 +79,7 @@ This portion of the Problem Set will be graded out of 20 points and is worth 4% 
             Function that computes the principal moments of intertia
         </td>
         <td>
-            9 Points
+            4 Points
         </td>
     </tr>
     <tr>
@@ -87,15 +87,15 @@ This portion of the Problem Set will be graded out of 20 points and is worth 4% 
             Function that determines the molecular rotor type
         </td>
         <td>
-            3 Points
+            1 Points
         </td>
     </tr>
     <tr>
         <td>
-            Application of functions to provided molecules
+            Application & tests of functions to provided molecules
         </td>
         <td>
-            3 Points
+            2 Points
         </td>
     </tr>
     
