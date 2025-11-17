@@ -137,8 +137,14 @@ The eigenvalues obtained from the previous step can be used to determine the [mo
 * If two moments are equal (but different from the third) then the rotor type is is a "symmetric top"
 * If all three moments are different, the rotor type is "asymmetric top"
 
-Write a class method that returns the molecular rotor type (as a string). Use this function on the
-two in the `main` function to determine the molecular rotor types.
+Write a class method that returns the molecular rotor type (as a string). 
+
+
+#### Testing your code
+
+In the `main` function in the `molecule.cpp` file, I have given you the atomic masses and coordinates for a water molecule and methane
+molecule. Using your additions to the Molecule class, calculate (and print out) the inertia tensor,
+principal moments of inertia, and molecular rotor type for each molecule.
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
