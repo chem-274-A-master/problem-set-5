@@ -1,9 +1,5 @@
 # Problem Set 5 Python Rubric
 
-# Problem Set 5 Python Rubric
-
-# Problem Set 5 Python Rubric
-
 This portion of the Problem Set will be graded out of **10 points** and is worth **4% of your total grade**.
 
 <table width="100%">
