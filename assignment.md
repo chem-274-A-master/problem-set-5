@@ -155,6 +155,8 @@ You can use this field to determine whether a residue is an amino acid or nuclei
 
 You will need to get all information required to construct a residue. You should be getting the ideal coordinates from these files.
 
+Retrieve information from the CIF for constructing a residue. Note that the tests require you to also write a `from_cif` method on your class.
+
 ---
 
 ### Part 3 – Factory Function for Convenience
@@ -169,8 +171,6 @@ Create a function called `create_residue(code)` that:
 - Calls `Residue.from_cif(path)` and returns the result
 
 This is an example of the **factory function** design pattern—a function that encapsulates the logic of creating objects.
-
----
 
 ---
 
